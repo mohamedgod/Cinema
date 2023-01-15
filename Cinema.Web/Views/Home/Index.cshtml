@@ -1,0 +1,24 @@
+﻿@model IEnumerable<MovieDto>
+<form>
+    <div class="container row">
+        @foreach (var movie in Model)
+        {
+            <div class="col-3">
+                <div class="p-0 my-3 border">
+                    <div class="card">
+                        <a asp-action="Details" asp-route-movieId="@movie.MovieId"> <img src="@movie.ImageUrl" class="img-thumbnail"> </a>
+                        <div class="card-body">
+                            <h3 class="card-title text-success">@movie.Name</h3>
+                            <span class="badge badge-light mb-2 ">@movie.Name</span>
+                            <div class="row">                         
+                                <div class="col">
+                                    <a asp-action="Details" asp-route-movieId="@movie.MovieId" class="btn btn-success form-control">Details</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</form>
